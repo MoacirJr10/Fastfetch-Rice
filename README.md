@@ -21,7 +21,7 @@ A customizable Linux terminal dashboard / Um painel personalizável para o termi
 
 | Tema | Aparência |
 | --- | --- |
-| classic | Magenta, ciano e azul |
+| classic | ASCII original, magenta, ciano e azul |
 | compact | Logo menor e menos informações |
 | cyan | Ciano, azul e verde |
 | amber | Amarelo, vermelho e magenta |
@@ -29,9 +29,13 @@ A customizable Linux terminal dashboard / Um painel personalizável para o termi
 
 Mude o tema com `bash install.sh compact` (ou outro nome). Use `--yes` apenas para dispensar a confirmação.
 
+### Ícones e fonte
+
+O tema Classic reproduz os ícones Nerd Font e a paleta de oito quadrados coloridos do terminal original. Instale JetBrainsMono Nerd Font e selecione **JetBrainsMono Nerd Font** nas preferências do terminal (por exemplo, Ptyxis). Se aparecerem quadrados vazios ou símbolos incorretos, confirme a fonte selecionada; o Fastfetch não instala fontes. O tema `plain` não precisa de Nerd Font. O ícone Arch do tema Classic é decorativo, não identifica a distribuição.
+
 ### Personalizar e restaurar
 
-As seções SYSTEM, HARDWARE e STATUS organizam as informações. Substitua o arquivo `ascii.txt` na pasta de configuração do Fastfetch por uma arte sua (no compact, use `ascii-compact.txt`). O instalador respeita XDG_CONFIG_HOME. O disco exibe / por padrão; edite folders para incluir outros pontos de montagem. A CPU, pacotes e swap usam módulos nativos. A data e idade da raiz são estimativas, não a data garantida de instalação. Bateria e ambiente gráfico podem não estar disponíveis.
+As seções SYSTEM, HARDWARE e STATUS organizam as informações. Substitua o arquivo `ascii.txt` na pasta de configuração do Fastfetch por uma arte sua (no compact, use `ascii-compact.txt`). A arte original tem cerca de 93 colunas; para janelas pequenas, use o tema compact. O instalador respeita XDG_CONFIG_HOME. O disco exibe / por padrão; edite folders para incluir outros pontos de montagem. A CPU, pacotes e swap usam módulos nativos (sem campo AppImage não reconhecido nem indicação fixa de zram). O formato de armazenamento mantém as porcentagens coloridas do original. A data e idade da raiz são estimativas, não a data garantida de instalação. Bateria e ambiente gráfico podem não estar disponíveis.
 
 O instalador não altera wallpaper, fundo transparente, prompt Fish ou tema GNOME. Para iniciar junto do Fish, acrescente `fastfetch` a ~/.config/fish/config.fish somente se desejar; para Bash ou Zsh, aos respectivos arquivos de configuração.
 
@@ -39,7 +43,7 @@ O instalador informa a pasta backup.XXXXXXXX quando substitui arquivos. Copie os
 
 ### Contribuições
 
-Sugestões, temas e correções são bem-vindos! Use Issues e Pull Requests. Compartilhe apenas imagens com direito de redistribuição e remova informações pessoais das capturas. A licença MIT se aplica ao código e à arte geométrica incluída; obras externas exigem autorização própria.
+Sugestões, temas e correções são bem-vindos! Use Issues e Pull Requests. Compartilhe apenas imagens com direito de redistribuição e remova informações pessoais das capturas. A licença MIT se aplica ao código e à arte geométrica compacta. A arte ASCII principal foi fornecida pelo mantenedor; se derivada de obra externa, sua redistribuição depende da autorização correspondente.
 
 ## English
 
@@ -50,9 +54,11 @@ Sugestões, temas e correções são bem-vindos! Use Issues e Pull Requests. Com
 3. Run `bash install.sh classic` and confirm. Existing files are backed up; no sudo or shell startup changes.
 4. Run `fastfetch`. Switch themes using `bash install.sh compact`, cyan, amber or plain.
 
-The classic layout groups modules into SYSTEM, HARDWARE and STATUS. Replace the local logo file with your own artwork. The installer resolves the logo against your XDG configuration directory. Storage defaults to /; edit folders to add mounts. Root filesystem creation date and age are estimates. Transparency, wallpaper, shell prompt and GNOME settings are independent.
+The classic layout restores the original Nerd Font glyphs, colored percentages and eight-square color palette and groups modules into SYSTEM, HARDWARE and STATUS. Select JetBrainsMono Nerd Font in your terminal preferences; if glyphs are missing, check the configured font or use plain. The Arch icon is decorative. Replace the local logo file with your own artwork. The original ASCII is approximately 93 columns wide; use compact for smaller windows. The installer resolves the logo against your XDG configuration directory. Storage defaults to /; edit folders to add mounts. Root filesystem creation date and age are estimates. Transparency, wallpaper, shell prompt and GNOME settings are independent.
 
 To restore, inspect the backup directory printed by the installer and copy previous files back. Remove newly created files manually if necessary. Contributions are welcome; share only artwork you have permission to redistribute and redact personal details.
+
+The MIT license covers project code and the compact geometric artwork. The main ASCII artwork was supplied by the maintainer; redistribution of underlying third-party artwork requires appropriate permission.
 
 ### Validation / Validação
 

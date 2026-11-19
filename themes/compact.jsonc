@@ -8,6 +8,9 @@
     "size": {
       "binaryPrefix": "iec",
       "ndigits": 1
+    },
+    "percent": {
+      "type": 9
     }
   },
   "logo": {
@@ -25,67 +28,77 @@
   "modules": [
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m┌─────────────────────\u001b[38;5;7m  SYSTEM  \u001b[38;5;8m─────────────────────┐\u001b[0m"
+      "format": "\u001b[38;5;8m┌─────────────────────\u001b[38;5;7m  SYSTEM  \u001b[38;5;8m─────────────────────┐"
     },
     {
       "type": "os",
-      "key": "  \u001b[38;5;5m  OS\u001b[0m"
+      "key": "  \u001b[38;5;5m  OS",
+      "format": "{pretty-name} {arch}"
     },
     {
       "type": "kernel",
-      "key": "  \u001b[38;5;5m  Kernel\u001b[0m"
+      "key": "  \u001b[38;5;5m  Kernel",
+      "format": "{sysname} {release}"
     },
     {
       "type": "shell",
-      "key": "  \u001b[38;5;5m  Shell\u001b[0m"
+      "key": "  \u001b[38;5;5m  Shell",
+      "format": "{pretty-name} {version}"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m└────────────────────────────────────────────────────┘\u001b[0m"
+      "format": "\u001b[38;5;8m└────────────────────────────────────────────────────┘"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m┌────────────────────\u001b[38;5;7m  HARDWARE  \u001b[38;5;8m────────────────────┐\u001b[0m"
+      "format": "\u001b[38;5;8m┌────────────────────\u001b[38;5;7m  HARDWARE  \u001b[38;5;8m────────────────────┐"
     },
     {
       "type": "cpu",
-      "key": "  \u001b[38;5;6m  CPU\u001b[0m"
+      "key": "  \u001b[38;5;6m  CPU",
+      "format": "{name} @ {freq-max}"
     },
     {
       "type": "gpu",
-      "key": "  \u001b[38;5;6m󰢮  GPU\u001b[0m"
+      "key": "  \u001b[38;5;6m󰢮  GPU",
+      "format": "{name} ({type}, {driver})"
     },
     {
       "type": "memory",
-      "key": "  \u001b[38;5;6m  Memory\u001b[0m"
+      "key": "  \u001b[38;5;6m  Memory",
+      "format": "{used} / {total} ({percentage})"
     },
     {
       "type": "disk",
-      "key": "  \u001b[38;5;6m  Disk\u001b[0m",
-      "folders": "/"
+      "key": "  \u001b[38;5;6m  Disk",
+      "folders": "/",
+      "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem}  [{mountpoint}]"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m└────────────────────────────────────────────────────┘\u001b[0m"
+      "format": "\u001b[38;5;8m└────────────────────────────────────────────────────┘"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m┌─────────────────────\u001b[38;5;7m  STATUS  \u001b[38;5;8m─────────────────────┐\u001b[0m"
+      "format": "\u001b[38;5;8m┌─────────────────────\u001b[38;5;7m  STATUS  \u001b[38;5;8m─────────────────────┐"
     },
     {
       "type": "uptime",
-      "key": "  \u001b[38;5;4m  Uptime\u001b[0m"
+      "key": "  \u001b[38;5;4m  Uptime",
+      "format": "{days}d {hours}h {minutes}m"
     },
     {
       "type": "battery",
-      "key": "  \u001b[38;5;4m  Battery\u001b[0m"
+      "key": "  \u001b[38;5;4m  Battery",
+      "format": "{capacity} - {status}"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m└────────────────────────────────────────────────────┘\u001b[0m"
+      "format": "\u001b[38;5;8m└────────────────────────────────────────────────────┘"
     },
     {
-      "type": "colors"
+      "type": "custom",
+      "format": "\u001b[38;5;1m  \u001b[38;5;2m  \u001b[38;5;3m  \u001b[38;5;4m  \u001b[38;5;5m  \u001b[38;5;6m  \u001b[38;5;7m  \u001b[38;5;8m \u001b[0m"
     }
   ]
 }
