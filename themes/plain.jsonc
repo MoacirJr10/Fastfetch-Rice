@@ -8,6 +8,9 @@
     "size": {
       "binaryPrefix": "iec",
       "ndigits": 1
+    },
+    "percent": {
+      "type": 9
     }
   },
   "logo": {
@@ -25,120 +28,139 @@
   "modules": [
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m┌────────────────────────────────────────\u001b[38;5;7m  SYSTEM  \u001b[38;5;8m────────────────────────────────────────┐\u001b[0m"
+      "format": "\u001b[38;5;8m┌────────────────────────────────────────\u001b[38;5;7m  SYSTEM  \u001b[38;5;8m────────────────────────────────────────┐"
     },
     {
       "type": "os",
-      "key": "  \u001b[38;5;5mOS\u001b[0m"
+      "key": "  \u001b[38;5;5mOS",
+      "format": "{pretty-name} {arch}"
     },
     {
       "type": "kernel",
-      "key": "  \u001b[38;5;5mKernel\u001b[0m"
+      "key": "  \u001b[38;5;5mKernel",
+      "format": "{sysname} {release}"
     },
     {
       "type": "de",
-      "key": "  \u001b[38;5;5mDesktop\u001b[0m"
+      "key": "  \u001b[38;5;5mDesktop",
+      "format": "{pretty-name} {version}"
     },
     {
       "type": "wm",
-      "key": "  \u001b[38;5;5mWM\u001b[0m"
+      "key": "  \u001b[38;5;5mWM",
+      "format": "{pretty-name} ({protocol-name})"
     },
     {
       "type": "terminal",
-      "key": "  \u001b[38;5;5mTerminal\u001b[0m"
+      "key": "  \u001b[38;5;5mTerminal",
+      "format": "{pretty-name} {version}"
     },
     {
       "type": "terminalfont",
-      "key": "  \u001b[38;5;5mFont\u001b[0m"
+      "key": "  \u001b[38;5;5mFont",
+      "format": "{name}"
     },
     {
       "type": "shell",
-      "key": "  \u001b[38;5;5mShell\u001b[0m"
+      "key": "  \u001b[38;5;5mShell",
+      "format": "{pretty-name} {version}"
     },
     {
       "type": "packages",
-      "key": "  \u001b[38;5;5mPackages\u001b[0m"
+      "key": "  \u001b[38;5;5mPackages"
     },
     {
       "type": "locale",
-      "key": "  \u001b[38;5;5mLocale\u001b[0m"
+      "key": "  \u001b[38;5;5mLocale",
+      "format": "{result}"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘\u001b[0m"
+      "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m┌───────────────────────────────────────\u001b[38;5;7m  HARDWARE  \u001b[38;5;8m───────────────────────────────────────┐\u001b[0m"
+      "format": "\u001b[38;5;8m┌───────────────────────────────────────\u001b[38;5;7m  HARDWARE  \u001b[38;5;8m───────────────────────────────────────┐"
     },
     {
       "type": "host",
-      "key": "  \u001b[38;5;6mHost\u001b[0m"
+      "key": "  \u001b[38;5;6mHost",
+      "format": "{name}"
     },
     {
       "type": "cpu",
-      "key": "  \u001b[38;5;6mCPU\u001b[0m"
+      "key": "  \u001b[38;5;6mCPU",
+      "format": "{name} @ {freq-max}"
     },
     {
       "type": "gpu",
-      "key": "  \u001b[38;5;6mGPU\u001b[0m"
+      "key": "  \u001b[38;5;6mGPU",
+      "format": "{name} ({type}, {driver})"
     },
     {
       "type": "display",
-      "key": "  \u001b[38;5;6mResolution\u001b[0m"
+      "key": "  \u001b[38;5;6mResolution",
+      "format": "{width}x{height} @ {refresh-rate}Hz"
     },
     {
       "type": "memory",
-      "key": "  \u001b[38;5;6mMemory\u001b[0m"
+      "key": "  \u001b[38;5;6mMemory",
+      "format": "{used} / {total} ({percentage})"
     },
     {
       "type": "swap",
-      "key": "  \u001b[38;5;6mSwap\u001b[0m"
+      "key": "  \u001b[38;5;6mSwap",
+      "format": "{used} / {total} ({percentage})"
     },
     {
       "type": "disk",
-      "key": "  \u001b[38;5;6mDisk\u001b[0m",
-      "folders": "/"
+      "key": "  \u001b[38;5;6mDisk",
+      "folders": "/",
+      "format": "{size-used} / {size-total} ({size-percentage}) - {filesystem}  [{mountpoint}]"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘\u001b[0m"
+      "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m┌────────────────────────────────────────\u001b[38;5;7m  STATUS  \u001b[38;5;8m────────────────────────────────────────┐\u001b[0m"
+      "format": "\u001b[38;5;8m┌────────────────────────────────────────\u001b[38;5;7m  STATUS  \u001b[38;5;8m────────────────────────────────────────┐"
     },
     {
       "type": "datetime",
-      "key": "  \u001b[38;5;4mDate\u001b[0m"
+      "key": "  \u001b[38;5;4mDate",
+      "format": "{day-in-month}.{month-pretty}.{year}  {hour-pretty}:{minute-pretty}:{second-pretty}"
     },
     {
       "type": "processes",
-      "key": "  \u001b[38;5;4mProcesses\u001b[0m"
+      "key": "  \u001b[38;5;4mProcesses",
+      "format": "{result} running"
     },
     {
       "type": "command",
-      "key": "  \u001b[38;5;4mRoot FS date\u001b[0m",
+      "key": "  \u001b[38;5;4mRoot FS date",
       "shell": "/bin/sh",
       "text": "b=$(stat -c %W / 2>/dev/null) && [ \"$b\" -gt 0 ] 2>/dev/null && date -d \"@$b\" \"+%d.%m.%Y %H:%M\" 2>/dev/null || printf \"N/A\\n\""
     },
     {
       "type": "command",
-      "key": "  \u001b[38;5;4mRoot FS age\u001b[0m",
+      "key": "  \u001b[38;5;4mRoot FS age",
       "shell": "/bin/sh",
       "text": "b=$(stat -c %W / 2>/dev/null); n=$(date +%s); if [ \"$b\" -gt 0 ] 2>/dev/null && [ \"$b\" -le \"$n\" ]; then printf \"%s days\\n\" \"$(( (n-b)/86400 ))\"; else printf \"N/A\\n\"; fi"
     },
     {
       "type": "uptime",
-      "key": "  \u001b[38;5;4mUptime\u001b[0m"
+      "key": "  \u001b[38;5;4mUptime",
+      "format": "{days}d {hours}h {minutes}m"
     },
     {
       "type": "battery",
-      "key": "  \u001b[38;5;4mBattery\u001b[0m"
+      "key": "  \u001b[38;5;4mBattery",
+      "format": "{capacity} - {status}"
     },
     {
       "type": "custom",
-      "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘\u001b[0m"
+      "format": "\u001b[38;5;8m└──────────────────────────────────────────────────────────────────────────────────────────┘"
     },
     {
       "type": "colors"

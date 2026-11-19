@@ -8,7 +8,14 @@ from pathlib import Path
 for p in [Path('config.jsonc'), *Path('themes').glob('*.jsonc')]:
     c=json.loads(p.read_text())
     assert c['logo']['type']=='file'
-    assert len([m for m in c['modules'] if m['type']=='custom'])==6
+    assert len([m for m in c['modules'] if m['type']=='custom']) == (6 if p.stem == 'plain' else 7)
+    assert c['display']['percent']['type'] == 9
+    if p.stem != 'plain':
+        os_module = next(m for m in c['modules'] if m['type']=='os')
+        assert '\uf303' in os_module['key'], 'Original OS glyph missing'
+        assert c['modules'][-1]['format'].count('\uf0c8') == 8, 'Palette glyphs missing'
+    else:
+        assert all(not any(0xe000 <= ord(ch) <= 0xf8ff or 0xf0000 <= ord(ch) <= 0xffffd for ch in m.get('key','')) for m in c['modules'])
     assert any(m['type']=='cpu' for m in c['modules'])
     assert '{appimage}' not in p.read_text()
     print('JSON OK:',p)
