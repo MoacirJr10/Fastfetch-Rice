@@ -6,9 +6,11 @@ A customizable Linux terminal dashboard / Um painel personalizável para o termi
 
 [Português](#português) · [English](#english)
 
-![Illustrated terminal layout](screenshots/preview.svg)
+![Fastfetch-Rice — captura real do terminal / real terminal screenshot](screenshots/preview.png)
 
-*Illustrated preview — not a runtime screenshot. / Prévia ilustrativa — não é uma captura da execução.*
+*Captura real da configuração original com dados pessoais ocultados. / Real screenshot of the original configuration with personal identifiers redacted.*
+
+[Prévia ilustrativa alternativa / Alternative illustrated preview](screenshots/preview.svg)
 
 ## Português
 
